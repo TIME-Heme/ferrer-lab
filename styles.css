@@ -1,0 +1,233 @@
+:root {
+  /* Institutional accents sampled from the IJC mark and inspired by SJD's red. */
+  --ijc-teal: #00bfd6;
+  --ijc-green: #6cc04a;
+  --sjd-red: #c52e47;
+
+  /* Site palette. Burgundy leads, with navy ink and cool neutral surfaces. */
+  --ink: #202538;
+  --muted: #515b6b;
+  --burgundy: #672139;
+  --burgundy-dark: #2c1327;
+  --burgundy-light: #903653;
+  --paper: #fff;
+  --surface: #f5f4f7;
+  --hero-surface: #f4eaf0;
+  --lavender: #ded7ec;
+  --blush: #ebcbd7;
+  --sea-glass: #d3e8e8;
+  --line: #dce2e8;
+  --on-dark: #fff;
+  --on-dark-muted: #f3dce4;
+  --focus: #086579;
+  --cell-inner: #9a416d;
+  --cell-center: #542242;
+  --cell-edge: #d17399;
+  --cell-shadow: #38152b;
+
+  /* Typography. System fonts keep the page self-contained. */
+  --font-body: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: Georgia, "Times New Roman", serif;
+  --text-small: .875rem;
+  --text-body: 1rem;
+  --text-lead: 1.125rem;
+  --text-hero: clamp(2.45rem, 5vw, 4.65rem);
+  --text-section: clamp(2rem, 4vw, 3.2rem);
+  --text-subhead: 1.2rem;
+  --text-feature: 2.3rem;
+  --line-body: 1.65;
+  --line-title: 1.06;
+  --tracking-label: .09em;
+  --tracking-title: -.025em;
+  --weight-bold: 700;
+
+  /* Layout, spacing and borders. Keep the responsive breakpoints below. */
+  --site-width: 69rem;
+  --jump-size: 8rem;
+  --portrait-size: 8rem;
+  --pi-portrait-size: 12rem;
+  --map-height: 23rem;
+  --reading-width: 46rem;
+  --gutter: clamp(1.25rem, 4.5vw, 3.5rem);
+  --section-space: clamp(3rem, 7vw, 6rem);
+  --space-xs: .35rem;
+  --space-sm: .75rem;
+  --space-md: 1.25rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --border: 1px;
+  --accent-width: 3px;
+  --radius: .35rem;
+  --logo-ijc: 9rem;
+  --logo-sjd: 10rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font: var(--text-body) / var(--line-body) var(--font-body);
+}
+
+h1, h2, h3, p, ul { margin: 0; }
+h1, h2 { font-family: var(--font-display); font-weight: normal; line-height: var(--line-title); letter-spacing: var(--tracking-title); }
+h2 { font-size: var(--text-section); margin-bottom: var(--space-md); }
+h3 { font-size: var(--text-subhead); line-height: 1.3; }
+h3 + p { margin-top: var(--space-sm); }
+a { color: var(--burgundy); text-underline-offset: .19em; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; }
+.contact a:focus-visible { outline-color: var(--ijc-teal); }
+
+.wrap { max-width: calc(var(--site-width) + 2 * var(--gutter)); margin-inline: auto; padding-inline: var(--gutter); }
+.section { padding-block: var(--section-space); }
+.intro { max-width: var(--reading-width); color: var(--muted); font-size: var(--text-lead); }
+.tinted { background: var(--surface); }
+
+.skip-link { position: absolute; z-index: 1; top: var(--space-sm); left: var(--space-sm); padding: var(--space-sm); background: var(--paper); transform: translateY(-200%); }
+.skip-link:focus { transform: none; }
+
+.masthead, .institutions, .navigation, .site-footer, .links { display: flex; align-items: center; flex-wrap: wrap; }
+.masthead { justify-content: space-between; gap: var(--space-md); padding-block: var(--space-md); border-bottom: var(--border) solid var(--line); }
+.lab-mark { color: var(--ink); font-family: var(--font-display); font-size: var(--text-feature); text-decoration: none; line-height: 1; }
+.institutions { gap: var(--space-lg); }
+.institutions img { display: block; height: auto; }
+.institutions a:first-child img { width: var(--logo-ijc); }
+.institutions a:last-child img { width: var(--logo-sjd); }
+.navigation { gap: var(--space-sm) var(--space-lg); padding-block: var(--space-sm); }
+.navigation a { color: var(--ink); font-size: var(--text-small); font-weight: var(--weight-bold); text-decoration: none; }
+.navigation a:hover { text-decoration: underline; }
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(105deg, var(--hero-surface), var(--lavender));
+}
+
+.hero-grid { display: grid; grid-template-columns: minmax(0, 2.2fr) minmax(0, 1fr); gap: var(--space-lg); align-items: center; padding-block: var(--section-space); }
+.eyebrow { font-size: var(--text-small); font-weight: var(--weight-bold); letter-spacing: var(--tracking-label); text-transform: uppercase; }
+.hero .eyebrow { color: var(--burgundy); }
+h1 { font-size: var(--text-hero); margin-top: var(--space-md); }
+h1 em { display: block; color: var(--burgundy); }
+.hero-summary { max-width: 37rem; margin-top: var(--space-md); color: var(--muted); font-size: var(--text-lead); }
+
+/* Decorative stylized cell shapes. This is an illustration, not a micrograph. */
+.cell-field { position: relative; aspect-ratio: 4 / 5; }
+.cell-field span {
+  position: absolute;
+  width: var(--cell-size);
+  top: var(--cell-top);
+  left: var(--cell-left);
+  aspect-ratio: 1;
+  border-radius: 48% 52% 48% 52%;
+  transform: rotate(var(--cell-angle));
+  opacity: var(--cell-opacity);
+  background:
+    radial-gradient(ellipse at 42% 42%, var(--cell-inner), var(--cell-center) 31%, transparent 57%),
+    radial-gradient(circle at 42% 36%, var(--cell-edge), var(--burgundy-light) 67%, var(--cell-shadow) 76%);
+  box-shadow: inset 0 0 1rem var(--cell-edge), 0 .8rem 2rem var(--cell-shadow);
+}
+.cell-field span:nth-child(1) { --cell-size: 73%; --cell-top: 19%; --cell-left: 12%; --cell-angle: -24deg; --cell-opacity: .9; }
+.cell-field span:nth-child(2) { --cell-size: 38%; --cell-top: 0%; --cell-left: 57%; --cell-angle: 28deg; --cell-opacity: .62; }
+.cell-field span:nth-child(3) { --cell-size: 33%; --cell-top: 69%; --cell-left: 0%; --cell-angle: 12deg; --cell-opacity: .64; }
+.cell-field span:nth-child(4) { --cell-size: 25%; --cell-top: 70%; --cell-left: 77%; --cell-angle: -12deg; --cell-opacity: .48; }
+
+.research-grid, .people-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-lg); margin-top: var(--space-lg); }
+.research-grid article { border-top: var(--accent-width) solid var(--sjd-red); padding-top: var(--space-md); }
+.research-grid article:nth-child(2) { border-color: var(--ijc-teal); }
+.research-grid article:nth-child(3) { border-color: var(--ijc-green); }
+.research-grid p, .people-grid p, .alumni p { color: var(--muted); }
+.people-grid article { border-top: var(--border) solid var(--line); padding-top: var(--space-md); }
+.people-grid article > a { display: inline-block; margin-top: var(--space-sm); }
+.pi { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: var(--space-lg); padding: var(--space-lg); background: var(--paper); border-inline-start: var(--accent-width) solid var(--burgundy); }
+.pi .eyebrow { color: var(--burgundy); margin-bottom: var(--space-xs); }
+.pi h3 { font-family: var(--font-display); font-weight: normal; font-size: var(--text-feature); }
+.pi h3 + p { max-width: var(--reading-width); }
+.links { list-style: none; padding: 0; margin-top: var(--space-sm); gap: var(--space-xs) var(--space-md); }
+.alumni { margin-top: var(--space-xl); }
+
+.publications { list-style: none; padding: 0; margin-top: var(--space-lg); }
+.publications li { display: grid; grid-template-columns: 4rem minmax(0, 1fr); gap: var(--space-sm); padding-block: var(--space-md); border-top: var(--border) solid var(--line); }
+.publications li:last-child { border-bottom: var(--border) solid var(--line); }
+.publications time, .publications a { font-weight: var(--weight-bold); }
+.publications p { color: var(--muted); margin-top: var(--space-xs); }
+
+/* Circular section links echo the reference site's homepage navigation. */
+.section-jumps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-md);
+  padding-block: var(--space-xl);
+  text-align: center;
+  border-bottom: var(--border) solid var(--line);
+}
+.section-jumps a {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-sm);
+  font-size: var(--text-subhead);
+  font-weight: var(--weight-bold);
+  text-decoration: none;
+}
+.section-jumps a:hover { text-decoration: underline; }
+.jump-art { display: block; width: min(100%, var(--jump-size)); aspect-ratio: 1; border-radius: 50%; }
+.jump-research { background: radial-gradient(circle at 42% 40%, var(--burgundy-light) 12%, var(--cell-edge) 30%, transparent 32%), radial-gradient(circle at 65% 68%, var(--burgundy) 8%, transparent 10%), var(--blush); }
+.jump-people { background: radial-gradient(circle at 38% 37%, var(--burgundy-light) 12%, transparent 13%), radial-gradient(circle at 66% 55%, var(--cell-edge) 16%, transparent 17%), radial-gradient(circle at 30% 70%, var(--burgundy) 7%, transparent 8%), var(--lavender); }
+.jump-papers { background: repeating-linear-gradient(145deg, transparent 0 11px, var(--focus) 12px 14px, transparent 15px 22px), var(--sea-glass); }
+
+.portrait {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: var(--portrait-size);
+  max-width: 100%;
+  aspect-ratio: 1;
+  margin-bottom: var(--space-md);
+  overflow: hidden;
+  border-radius: 50%;
+  background: var(--lavender);
+  color: var(--burgundy);
+  font-size: var(--text-feature);
+  font-family: var(--font-display);
+}
+.pi .portrait { width: var(--pi-portrait-size); margin-bottom: 0; }
+.portrait img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.collaborator-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.institutions-title { margin-top: var(--space-xl); }
+.institution-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-md);
+  padding: 0;
+  margin-top: var(--space-md);
+}
+.institution-grid a { display: grid; place-items: center; height: 100%; min-height: 5.5rem; padding: var(--space-sm); background: var(--paper); }
+.institution-grid img { display: block; width: 100%; max-width: 9rem; height: auto; max-height: 2.5rem; object-fit: contain; }
+
+.contact { background: var(--burgundy-dark); color: var(--on-dark); }
+.map { display: block; grid-column: 1 / -1; width: 100%; height: var(--map-height); border: 0; border-radius: var(--radius); }
+.map-link { margin-top: var(--space-sm); }
+.contact-grid { display: grid; grid-template-columns: 1.5fr 1fr; align-items: start; gap: var(--space-xl); }
+.contact p, .contact a { color: var(--on-dark-muted); }
+.recruitment { margin-top: var(--space-md); overflow-wrap: anywhere; }
+.site-footer { justify-content: space-between; gap: var(--space-sm); padding-block: var(--space-md); color: var(--muted); font-size: var(--text-small); }
+
+@media (max-width: 54rem) {
+  .hero-grid { grid-template-columns: minmax(0, 2.5fr) minmax(0, 1fr); }
+  .research-grid, .people-grid { gap: var(--space-md); }
+}
+
+@media (max-width: 42rem) {
+  .hero-grid, .research-grid, .people-grid, .contact-grid { grid-template-columns: 1fr; }
+  .cell-field { display: none; }
+  .pi { grid-template-columns: 1fr; }
+  .institution-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .section-jumps a { font-size: var(--text-small); }
+  .institutions { gap: var(--space-md); }
+  .institutions a:first-child img { width: min(var(--logo-ijc), 34vw); }
+  .institutions a:last-child img { width: min(var(--logo-sjd), 40vw); }
+  .publications li { grid-template-columns: 3.2rem minmax(0, 1fr); }
+}
