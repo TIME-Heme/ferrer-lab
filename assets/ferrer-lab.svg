@@ -1,17 +1,63 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="480" height="300" viewBox="0 0 480 300" role="img" aria-labelledby="title desc">
-  <title id="title">Ferrer Lab</title>
-  <desc id="desc">A single blood cell with a methylation mark on one of three molecular data tracks.</desc>
+  <title id="title">Blood cancer research</title>
+  <desc id="desc">A leukemic blast among red blood cells connects to DNA methylation, single-cell multiomics, and a CAR T cell engaging a target.</desc>
   <style>
-    :root { --cell: #ead3df; --nucleus: #55233e; --mark: #ffc5ba; --track: #fff9f8; }
+    :root { --ink: #592842; --rose: #b95470; --blush: #ead0dc; --teal: #317978; --mint: #d2e5e1; --plum: #82678e; --light: #fff9f8; }
   </style>
-  <!-- Cell membrane and nucleus -->
-  <path fill="var(--cell)" d="M240 25c43-1 78 27 79 70 2 41-31 77-74 79-46 3-82-27-83-70-2-44 32-78 78-79Z"/>
-  <path fill="var(--nucleus)" d="M239 39c33-2 62 21 63 55 2 35-23 62-57 65-37 3-65-21-67-55-2-36 25-63 61-65Z"/>
-  <!-- Three molecular layers measured in one cell. The lollipop denotes methylation. -->
-  <g fill="none" stroke="var(--track)" stroke-width="5" stroke-linecap="round">
-    <path d="M210 87h58 M210 102h42 M210 117h51"/>
-    <path d="M251 87V74" stroke="var(--mark)"/>
+
+  <!-- The same specimen connects the molecular, cellular, and therapeutic views. -->
+  <path d="M161 135C204 135 205 87 248 87H282M162 155C203 155 212 209 253 209H283M117 185c0 18 8 28 8 38"
+        fill="none" stroke="#c3a5ba" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="2 7"/>
+
+  <!-- A large-nucleus blast in a field of erythrocytes. -->
+  <g transform="translate(111 144)">
+    <path d="M-52-6C-52-35-29-57 1-55C31-55 51-35 54-8C58 20 39 47 12 53C-20 60-49 40-53 12Z" fill="var(--blush)" stroke="var(--rose)" stroke-width="3"/>
+    <path d="M-38-8C-35-31-13-42 8-38C28-35 41-17 39 3C37 24 20 40-2 38C-22 37-40 22-40 1Z" fill="var(--ink)"/>
+    <circle cx="-11" cy="-11" r="6" fill="#c797b0"/>
+    <circle cx="16" cy="9" r="4" fill="#c797b0"/>
+    <circle cx="-35" cy="27" r="2.5" fill="var(--rose)"/>
+    <circle cx="36" cy="-26" r="2.5" fill="var(--rose)"/>
   </g>
-  <circle cx="251" cy="71" r="5.5" fill="var(--mark)"/>
-  <text x="240" y="238" text-anchor="middle" fill="var(--nucleus)" font-family="Georgia, 'Times New Roman', serif" font-size="67" letter-spacing="-2">Ferrer Lab</text>
+  <g fill="var(--rose)">
+    <ellipse cx="63" cy="61" rx="25" ry="15" transform="rotate(-24 63 61)"/>
+    <ellipse cx="153" cy="61" rx="21" ry="13" transform="rotate(20 153 61)"/>
+    <ellipse cx="49" cy="206" rx="18" ry="12" transform="rotate(28 49 206)"/>
+  </g>
+  <g fill="var(--blush)">
+    <ellipse cx="63" cy="61" rx="11" ry="5" transform="rotate(-24 63 61)"/>
+    <ellipse cx="153" cy="61" rx="9" ry="4" transform="rotate(20 153 61)"/>
+    <ellipse cx="49" cy="206" rx="8" ry="4" transform="rotate(28 49 206)"/>
+  </g>
+
+  <!-- DNA strands and methylation marks. -->
+  <g transform="translate(289 49)" fill="none" stroke-linecap="round">
+    <path d="M5 14c29 0 29 52 59 52s30-52 59-52M5 66c29 0 29-52 59-52s30 52 59 52" stroke="var(--ink)" stroke-width="3"/>
+    <path d="M13 16v48m15-40v32m36-42v52m35-42v32m16-40v48" stroke="var(--plum)" stroke-width="2" opacity=".6"/>
+    <path d="M64 14V2m51 62v12" stroke="var(--rose)" stroke-width="2.5"/>
+    <circle cx="64" cy="-2" r="4.5" fill="var(--rose)"/>
+    <circle cx="115" cy="80" r="4.5" fill="var(--rose)"/>
+  </g>
+
+  <!-- Individual cell profiles form distinct clusters in a schematic embedding. -->
+  <g transform="translate(296 157)">
+    <path d="M0 0v95h128" fill="none" stroke="#bda9ba" stroke-width="2" stroke-linecap="round"/>
+    <g fill="var(--rose)">
+      <circle cx="22" cy="35" r="4"/><circle cx="29" cy="21" r="4"/><circle cx="37" cy="32" r="4"/><circle cx="44" cy="17" r="4"/><circle cx="48" cy="29" r="4"/><circle cx="34" cy="42" r="4"/>
+    </g>
+    <g fill="var(--teal)">
+      <circle cx="49" cy="70" r="4"/><circle cx="60" cy="60" r="4"/><circle cx="66" cy="77" r="4"/><circle cx="74" cy="67" r="4"/><circle cx="81" cy="77" r="4"/><circle cx="60" cy="83" r="4"/>
+    </g>
+    <g fill="var(--plum)">
+      <circle cx="86" cy="41" r="4"/><circle cx="94" cy="29" r="4"/><circle cx="103" cy="40" r="4"/><circle cx="109" cy="19" r="4"/><circle cx="116" cy="33" r="4"/><circle cx="123" cy="24" r="4"/>
+    </g>
+  </g>
+
+  <!-- CAR T cell and target, with a receptor at the cell–cell interface. -->
+  <g transform="translate(144 244)">
+    <circle cx="0" cy="0" r="27" fill="var(--mint)" stroke="var(--teal)" stroke-width="3"/>
+    <circle cx="60" cy="0" r="22" fill="var(--blush)" stroke="var(--rose)" stroke-width="3"/>
+    <path d="M-12-5q6-11 16-4t3 16q-9 8-17 0t-2-12Z" fill="var(--teal)"/>
+    <path d="M50-3q3-8 12-6t9 11q-3 9-12 8T50-3Z" fill="var(--ink)"/>
+    <path d="M26 0h8m4-5-4 5 4 5" fill="none" stroke="var(--teal)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
 </svg>
