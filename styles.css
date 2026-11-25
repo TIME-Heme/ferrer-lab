@@ -12,7 +12,6 @@
   --burgundy-light: #903653;
   --paper: #fff;
   --surface: #f5f4f7;
-  --hero-surface: #f4eaf0;
   --lavender: #ded7ec;
   --blush: #ebcbd7;
   --sea-glass: #d3e8e8;
@@ -101,7 +100,7 @@ a:focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; }
 .navigation a:hover { text-decoration: underline; }
 
 /* The opening pairs a short lab introduction with a blood-cell sketch. */
-.hero { background: var(--surface); }
+.hero { background: var(--paper); }
 .hero-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
@@ -116,7 +115,7 @@ h1 em { display: block; color: var(--burgundy); }
 .hero-summary, .hero-affiliation { max-width: 37rem; margin-top: var(--space-md); color: var(--muted); }
 .hero-summary { font-size: var(--text-lead); }
 
-.hero-art { display: block; width: 100%; height: auto; background: var(--hero-surface); border-radius: var(--radius); }
+.hero-art { display: block; width: 100%; height: auto; }
 .section-art { display: block; width: 100%; height: auto; }
 .art-wash { fill: var(--blush); }
 .art-lilac { fill: var(--lavender); }
