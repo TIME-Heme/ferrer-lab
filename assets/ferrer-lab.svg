@@ -1,84 +1,122 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="480" height="342" viewBox="0 0 480 342" role="img" aria-labelledby="title desc">
-  <title id="title">Blood cancer research</title>
-  <desc id="desc">A leukemic blast among red blood cells connects to DNA methylation, single-cell multiomics, and a CAR T cell engaging a target.</desc>
-  <style>
-    :root { --ink: #592842; --rose: #b95470; --blush: #ead0dc; --teal: #317978; --mint: #d2e5e1; --plum: #82678e; --caption: #4d3f4b; }
-    .label { font: 650 18px system-ui, sans-serif; fill: var(--ink); }
-    .detail { font: 14px system-ui, sans-serif; fill: var(--caption); }
-  </style>
+  <title id="title">Blood cancer research illustration</title>
+  <desc id="desc">Inside a leukemic blast, methylated chromatin flows into single-cell data as a CAR T cell engages the blast at its membrane.</desc>
   <defs>
-    <radialGradient id="chromatin" cx="32%" cy="27%" r="76%">
-      <stop stop-color="#94607e"/>
-      <stop offset="1" stop-color="#54253f"/>
+    <radialGradient id="blast" cx=".34" cy=".23" r=".8">
+      <stop stop-color="#fff8f7"/>
+      <stop offset=".68" stop-color="#edcdd9"/>
+      <stop offset="1" stop-color="#d69cb5"/>
     </radialGradient>
-    <radialGradient id="cytoplasm" cx="35%" cy="30%" r="75%">
-      <stop stop-color="#fff4f5"/>
-      <stop offset="1" stop-color="#e6b9ce"/>
+    <radialGradient id="nucleus" cx=".33" cy=".27" r=".76">
+      <stop stop-color="#a56b8d"/>
+      <stop offset=".66" stop-color="#713f66"/>
+      <stop offset="1" stop-color="#532a50"/>
     </radialGradient>
+    <radialGradient id="t-cell" cx=".22" cy=".24" r=".86">
+      <stop stop-color="#f2fcf8"/>
+      <stop offset=".73" stop-color="#b7dcd3"/>
+      <stop offset="1" stop-color="#80b8ad"/>
+    </radialGradient>
+    <radialGradient id="t-nucleus" cx=".34" cy=".25" r=".78">
+      <stop stop-color="#74a79b"/>
+      <stop offset="1" stop-color="#326d67"/>
+    </radialGradient>
+    <radialGradient id="erythrocyte" cx=".45" cy=".46" r=".55">
+      <stop stop-color="#a94d69"/>
+      <stop offset=".43" stop-color="#db8295"/>
+      <stop offset=".72" stop-color="#efaabb"/>
+      <stop offset="1" stop-color="#c86783"/>
+    </radialGradient>
+    <linearGradient id="trajectory" x2="1" y2="0">
+      <stop stop-color="#ad517b"/>
+      <stop offset=".52" stop-color="#95739e"/>
+      <stop offset="1" stop-color="#6aa59a"/>
+    </linearGradient>
+    <path id="blast-membrane" d="M67 124C73 78 116 52 167 56c49 3 79 29 88 68 5 21 2 37-5 53-5 12-6 21-8 34-8 42-43 67-88 66-50-1-91-32-94-78-2-25 3-50 7-75Z"/>
+    <path id="t-membrane" d="M270 168c14-22 32-38 59-43 39-8 78 15 84 54 7 44-21 80-62 85-34 4-60-9-76-31-10-13-15-23-14-35 0-10 3-21 9-30Z"/>
+    <clipPath id="blast-clip"><use href="#blast-membrane"/></clipPath>
+    <clipPath id="t-clip"><use href="#t-membrane"/></clipPath>
+    <pattern id="granules" width="23" height="19" patternUnits="userSpaceOnUse">
+      <circle cx="5" cy="6" r="1.15" fill="#fff" opacity=".32"/>
+      <circle cx="15" cy="14" r="1.25" fill="#67354f" opacity=".12"/>
+    </pattern>
+    <g id="red-cell">
+      <ellipse rx="21" ry="12" fill="url(#erythrocyte)" stroke="#b85f7a" stroke-width=".85"/>
+      <ellipse cx="-1" rx="10" ry="4.5" fill="#b55873" opacity=".48"/>
+      <path d="M-16-3c6-5 20-7 31-2" fill="none" stroke="#f9d7df" stroke-width="1.1" stroke-linecap="round"/>
+    </g>
+    <path id="receptor" d="M0 7V0m0 0-4-5m4 5 4-5" fill="none" stroke="#387b72" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="gene-segment" d="M0 0h6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
   </defs>
 
-  <!-- The same specimen connects the molecular, cellular, and therapeutic views. -->
-  <path d="M162 131C213 131 218 83 261 83H278M163 153C209 153 222 218 263 218H278M111 204v31"
-        fill="none" stroke="#aa809d" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="2 7"/>
-
-  <!-- A large-nucleus blast in a field of erythrocytes. -->
-  <g transform="translate(111 144)">
-    <path d="M-52-6C-52-35-29-57 1-55C31-55 51-35 54-8C58 20 39 47 12 53C-20 60-49 40-53 12Z" fill="url(#cytoplasm)" stroke="var(--rose)" stroke-width="2"/>
-    <path d="M-38-8C-35-31-13-42 8-38C28-35 41-17 39 3C37 24 20 40-2 38C-22 37-40 22-40 1Z" fill="url(#chromatin)"/>
-    <circle cx="-11" cy="-11" r="6" fill="#c797b0"/>
-    <circle cx="16" cy="9" r="4" fill="#c797b0"/>
-    <circle cx="-35" cy="27" r="2.5" fill="var(--rose)"/>
-    <circle cx="36" cy="-26" r="2.5" fill="var(--rose)"/>
-  </g>
-  <g fill="var(--rose)">
-    <ellipse cx="63" cy="61" rx="25" ry="15" transform="rotate(-24 63 61)"/>
-    <ellipse cx="153" cy="61" rx="21" ry="13" transform="rotate(20 153 61)"/>
-    <ellipse cx="49" cy="206" rx="18" ry="12" transform="rotate(28 49 206)"/>
-  </g>
-  <g fill="var(--blush)">
-    <ellipse cx="63" cy="61" rx="11" ry="5" transform="rotate(-24 63 61)"/>
-    <ellipse cx="153" cy="61" rx="9" ry="4" transform="rotate(20 153 61)"/>
-    <ellipse cx="49" cy="206" rx="8" ry="4" transform="rotate(28 49 206)"/>
+  <!-- Blood cells establish the microscopic setting. -->
+  <g opacity=".84">
+    <use href="#red-cell" transform="translate(61 89) rotate(-38) scale(.8)"/>
+    <use href="#red-cell" transform="translate(108 43) rotate(-21) scale(.63)"/>
+    <use href="#red-cell" transform="translate(39 216) rotate(32) scale(.61)"/>
+    <use href="#red-cell" transform="translate(84 272) rotate(28) scale(.75)"/>
   </g>
 
-  <!-- DNA strands and methylation marks. -->
-  <g transform="translate(289 49)" fill="none" stroke-linecap="round">
-    <path d="M5 14c29 0 29 52 59 52s30-52 59-52M5 66c29 0 29-52 59-52s30 52 59 52" stroke="var(--ink)" stroke-width="3"/>
-    <path d="M13 16v48m15-40v32m36-42v52m35-42v32m16-40v48" stroke="var(--plum)" stroke-width="2" opacity=".6"/>
-    <path d="M64 14V2m51 62v12" stroke="var(--rose)" stroke-width="2.5"/>
-    <circle cx="64" cy="-2" r="4.5" fill="var(--rose)"/>
-    <circle cx="115" cy="80" r="4.5" fill="var(--rose)"/>
-  </g>
-
-  <!-- Individual cell profiles form distinct clusters in a schematic embedding. -->
-  <g transform="translate(296 157)">
-    <path d="M0 0v95h128" fill="none" stroke="#bda9ba" stroke-width="2" stroke-linecap="round"/>
-    <g fill="var(--rose)">
-      <circle cx="22" cy="35" r="4"/><circle cx="29" cy="21" r="4"/><circle cx="37" cy="32" r="4"/><circle cx="44" cy="17" r="4"/><circle cx="48" cy="29" r="4"/><circle cx="34" cy="42" r="4"/>
-    </g>
-    <g fill="var(--teal)">
-      <circle cx="49" cy="70" r="4"/><circle cx="60" cy="60" r="4"/><circle cx="66" cy="77" r="4"/><circle cx="74" cy="67" r="4"/><circle cx="81" cy="77" r="4"/><circle cx="60" cy="83" r="4"/>
-    </g>
-    <g fill="var(--plum)">
-      <circle cx="86" cy="41" r="4"/><circle cx="94" cy="29" r="4"/><circle cx="103" cy="40" r="4"/><circle cx="109" cy="19" r="4"/><circle cx="116" cy="33" r="4"/><circle cx="123" cy="24" r="4"/>
+  <!-- The membranes meet at an immune synapse. -->
+  <use href="#t-membrane" fill="url(#t-cell)" stroke="#5e9c93" stroke-width="1.5"/>
+  <g clip-path="url(#t-clip)">
+    <path d="M286 166c23-30 57-42 87-28 30 14 37 47 25 76-13 30-48 48-78 34" fill="none" stroke="#e8f7f2" stroke-width="3" opacity=".75"/>
+    <path d="M319 161c23-15 50-10 61 11 12 24-1 50-24 60-22 10-46 2-54-16-8-17-1-42 17-55Z" fill="url(#t-nucleus)" stroke="#39776c" stroke-width="1"/>
+    <path d="M319 161c23-15 50-10 61 11 12 24-1 50-24 60-22 10-46 2-54-16-8-17-1-42 17-55Z" fill="url(#granules)"/>
+    <path d="M317 205c11 10 25 10 38 3m-30-26c10-8 22-9 34-2m-37 18c15 7 28 6 41-4" fill="none" stroke="#caebe1" stroke-linecap="round" opacity=".4"/>
+    <g fill="#468479" opacity=".71">
+      <circle cx="288" cy="184" r="3.2"/><circle cx="282" cy="194" r="2.4"/><circle cx="291" cy="201" r="3.8"/><circle cx="285" cy="211" r="2.6"/><circle cx="301" cy="171" r="2.5"/>
     </g>
   </g>
-
-  <!-- CAR T cell and target, with a receptor at the cell–cell interface. -->
-  <g transform="translate(111 264)">
-    <circle cx="0" cy="0" r="27" fill="var(--mint)" stroke="var(--teal)" stroke-width="3"/>
-    <circle cx="60" cy="0" r="22" fill="var(--blush)" stroke="var(--rose)" stroke-width="3"/>
-    <path d="M-12-5q6-11 16-4t3 16q-9 8-17 0t-2-12Z" fill="var(--teal)"/>
-    <path d="M50-3q3-8 12-6t9 11q-3 9-12 8T50-3Z" fill="var(--ink)"/>
-    <path d="M26 0h8m4-5-4 5 4 5" fill="none" stroke="var(--teal)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <use href="#blast-membrane" fill="url(#blast)" stroke="#b96a8b" stroke-width="1.6"/>
+  <g clip-path="url(#blast-clip)">
+    <path d="M76 132c9-44 45-65 90-62 40 3 67 22 76 61m-167 49c-5 51 28 83 73 86 42 3 74-20 84-56" fill="none" stroke="#fff9fc" stroke-width="3" opacity=".67"/>
+    <path d="M101 101c27-26 75-24 101 3 17 18 22 36 17 57-3 13-16 25-21 42-8 30-38 43-66 35-36-10-51-42-49-75 1-25 3-45 18-62Z" fill="url(#nucleus)" stroke="#704064" stroke-width="1.1"/>
+    <path d="M92 167c2-48 27-76 67-75 33 1 60 21 62 57m-116 48c9 24 33 36 52 33 19-3 29-12 37-27" fill="none" stroke="#d4a3be" stroke-width="1.2" opacity=".36"/>
+    <path d="M64 72h194v210H64Z" fill="url(#granules)"/>
+    <g fill="#a95380" opacity=".49">
+      <circle cx="82" cy="137" r="2"/><circle cx="78" cy="155" r="1.4"/><circle cx="215" cy="103" r="2.7"/><circle cx="229" cy="113" r="1.5"/><circle cx="115" cy="243" r="2"/><circle cx="126" cy="253" r="1.5"/><circle cx="218" cy="225" r="2.8"/>
+    </g>
+  </g>
+  <g>
+    <use href="#receptor" transform="translate(266 180) rotate(-56)"/>
+    <use href="#receptor" transform="translate(259 193) rotate(-78)"/>
+    <use href="#receptor" transform="translate(259 207) rotate(-100)"/>
+    <path d="M249 177l5 3m-8 11 5 2m-7 12 5 1" stroke="#a85178" stroke-width="2" stroke-linecap="round"/>
+    <g fill="#dda067"><circle cx="258" cy="183" r="1.9"/><circle cx="254" cy="198" r="1.75"/><circle cx="253" cy="210" r="1.3"/></g>
   </g>
 
-  <g text-anchor="middle">
-    <text class="label" x="111" y="32">Leukemic blast</text>
-    <text class="label" x="353" y="32">Epigenetics</text>
-    <text class="detail" x="353" y="148">DNA methylation</text>
-    <text class="label" x="358" y="281">Single-cell multiomics</text>
-    <text class="detail" x="358" y="305">RNA · chromatin · proteins</text>
-    <text class="label" x="140" y="321">CAR T-cell therapy</text>
+  <!-- Chromatin starts inside the blast and extends into a molecular view. -->
+  <g fill="none" stroke-linecap="round">
+    <path d="M113 166c23-38 35 28 59 17 17-8 22-46 44-57 23-11 42 29 65 15 12-8 18-21 28-28" stroke="#f7dce6" stroke-width="7" opacity=".38"/>
+    <path d="M113 166c23-38 35 28 59 17 17-8 22-46 44-57 23-11 42 29 65 15 12-8 18-21 28-28" stroke="#fae8ed" stroke-width="2"/>
+    <path d="M115 185c24 17 39-51 60-42 17 7 26 32 43 24 24-11 30-49 57-49 16 0 22 11 34 12" stroke="#df9db9" stroke-width="2.3"/>
+    <path d="M121 155l4 29m14-25 8 7m19 18 2-40m19 30 4-22m12-17 8 33m25-39 6 18m15-4 2-21m13 23 2-25m16 11 7-6" stroke="#f5d1df" stroke-width="1.25" opacity=".65"/>
+    <path d="M176 143l6-19m31 3 4-15m39 28 2 13m19-35 5-13" stroke="#e3a567" stroke-width="1.65"/>
+  </g>
+  <g fill="#edb57b" stroke="#fff1da" stroke-width=".75">
+    <circle cx="182" cy="124" r="3.2"/><circle cx="217" cy="112" r="3.1"/><circle cx="258" cy="153" r="2.7"/><circle cx="282" cy="105" r="2.7"/>
+  </g>
+
+  <!-- Aligned molecular tracks dissolve into a single-cell embedding. -->
+  <g fill="none" stroke="url(#trajectory)" stroke-width="1.05" stroke-linecap="round" opacity=".52">
+    <path d="M300 118c23-24 43-33 78-36m-77 43c28-14 48-13 73-10m-70 8c16-28 29-42 46-58"/>
+    <path d="M307 115c40-34 77-3 115-17" stroke-dasharray="1 4"/>
+  </g>
+  <g transform="translate(320 97)" color="#a85a82">
+    <use href="#gene-segment" x="0"/><use href="#gene-segment" x="11"/><use href="#gene-segment" x="20"/>
+    <use href="#gene-segment" x="3" y="7" color="#6f9f96"/><use href="#gene-segment" x="15" y="7" color="#6f9f96"/>
+    <use href="#gene-segment" x="9" y="14" color="#8871a4"/><use href="#gene-segment" x="21" y="14" color="#8871a4"/>
+  </g>
+  <g opacity=".84">
+    <g fill="#b35d88">
+      <circle cx="350" cy="66" r="3"/><circle cx="354" cy="56" r="2.4"/><circle cx="362" cy="64" r="3.4"/><circle cx="365" cy="49" r="1.65"/><circle cx="371" cy="58" r="2.4"/><circle cx="374" cy="70" r="1.8"/><circle cx="344" cy="57" r="1.55"/><circle cx="358" cy="74" r="1.65"/><circle cx="369" cy="67" r="1.45"/>
+    </g>
+    <g fill="#8972a1">
+      <circle cx="378" cy="83" r="2.8"/><circle cx="388" cy="76" r="3.2"/><circle cx="392" cy="87" r="2.1"/><circle cx="399" cy="79" r="2.65"/><circle cx="398" cy="69" r="1.6"/><circle cx="405" cy="86" r="2.1"/><circle cx="384" cy="89" r="1.7"/><circle cx="408" cy="75" r="1.4"/>
+    </g>
+    <g fill="#609f91">
+      <circle cx="373" cy="115" r="2.6"/><circle cx="382" cy="108" r="2"/><circle cx="390" cy="117" r="3.25"/><circle cx="394" cy="104" r="2.4"/><circle cx="403" cy="111" r="2.9"/><circle cx="409" cy="102" r="1.8"/><circle cx="415" cy="113" r="1.4"/><circle cx="402" cy="121" r="1.6"/><circle cx="422" cy="98" r="2"/>
+    </g>
   </g>
 </svg>
