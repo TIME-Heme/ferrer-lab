@@ -1,18 +1,30 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="480" height="300" viewBox="0 0 480 300" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="342" viewBox="0 0 480 342" role="img" aria-labelledby="title desc">
   <title id="title">Blood cancer research</title>
   <desc id="desc">A leukemic blast among red blood cells connects to DNA methylation, single-cell multiomics, and a CAR T cell engaging a target.</desc>
   <style>
-    :root { --ink: #592842; --rose: #b95470; --blush: #ead0dc; --teal: #317978; --mint: #d2e5e1; --plum: #82678e; --light: #fff9f8; }
+    :root { --ink: #592842; --rose: #b95470; --blush: #ead0dc; --teal: #317978; --mint: #d2e5e1; --plum: #82678e; --caption: #4d3f4b; }
+    .label { font: 650 18px system-ui, sans-serif; fill: var(--ink); }
+    .detail { font: 14px system-ui, sans-serif; fill: var(--caption); }
   </style>
+  <defs>
+    <radialGradient id="chromatin" cx="32%" cy="27%" r="76%">
+      <stop stop-color="#94607e"/>
+      <stop offset="1" stop-color="#54253f"/>
+    </radialGradient>
+    <radialGradient id="cytoplasm" cx="35%" cy="30%" r="75%">
+      <stop stop-color="#fff4f5"/>
+      <stop offset="1" stop-color="#e6b9ce"/>
+    </radialGradient>
+  </defs>
 
   <!-- The same specimen connects the molecular, cellular, and therapeutic views. -->
-  <path d="M161 135C204 135 205 87 248 87H282M162 155C203 155 212 209 253 209H283M117 185c0 18 8 28 8 38"
-        fill="none" stroke="#c3a5ba" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="2 7"/>
+  <path d="M162 131C213 131 218 83 261 83H278M163 153C209 153 222 218 263 218H278M111 204v31"
+        fill="none" stroke="#aa809d" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="2 7"/>
 
   <!-- A large-nucleus blast in a field of erythrocytes. -->
   <g transform="translate(111 144)">
-    <path d="M-52-6C-52-35-29-57 1-55C31-55 51-35 54-8C58 20 39 47 12 53C-20 60-49 40-53 12Z" fill="var(--blush)" stroke="var(--rose)" stroke-width="3"/>
-    <path d="M-38-8C-35-31-13-42 8-38C28-35 41-17 39 3C37 24 20 40-2 38C-22 37-40 22-40 1Z" fill="var(--ink)"/>
+    <path d="M-52-6C-52-35-29-57 1-55C31-55 51-35 54-8C58 20 39 47 12 53C-20 60-49 40-53 12Z" fill="url(#cytoplasm)" stroke="var(--rose)" stroke-width="2"/>
+    <path d="M-38-8C-35-31-13-42 8-38C28-35 41-17 39 3C37 24 20 40-2 38C-22 37-40 22-40 1Z" fill="url(#chromatin)"/>
     <circle cx="-11" cy="-11" r="6" fill="#c797b0"/>
     <circle cx="16" cy="9" r="4" fill="#c797b0"/>
     <circle cx="-35" cy="27" r="2.5" fill="var(--rose)"/>
@@ -53,11 +65,20 @@
   </g>
 
   <!-- CAR T cell and target, with a receptor at the cell–cell interface. -->
-  <g transform="translate(144 244)">
+  <g transform="translate(111 264)">
     <circle cx="0" cy="0" r="27" fill="var(--mint)" stroke="var(--teal)" stroke-width="3"/>
     <circle cx="60" cy="0" r="22" fill="var(--blush)" stroke="var(--rose)" stroke-width="3"/>
     <path d="M-12-5q6-11 16-4t3 16q-9 8-17 0t-2-12Z" fill="var(--teal)"/>
     <path d="M50-3q3-8 12-6t9 11q-3 9-12 8T50-3Z" fill="var(--ink)"/>
     <path d="M26 0h8m4-5-4 5 4 5" fill="none" stroke="var(--teal)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <g text-anchor="middle">
+    <text class="label" x="111" y="32">Leukemic blast</text>
+    <text class="label" x="353" y="32">Epigenetics</text>
+    <text class="detail" x="353" y="148">DNA methylation</text>
+    <text class="label" x="358" y="281">Single-cell multiomics</text>
+    <text class="detail" x="358" y="305">RNA · chromatin · proteins</text>
+    <text class="label" x="140" y="321">CAR T-cell therapy</text>
   </g>
 </svg>
